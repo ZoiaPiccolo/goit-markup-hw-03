@@ -172,7 +172,7 @@ body {
 
 .foto-work:not(:last-child) {
     margin-right: var(--set-gap);
-    flex-basis: calc(100/3-30px);
+    flex-basis: calc(100% / 3 - 30px);
 }
 
 .section-title {
@@ -195,6 +195,10 @@ body {
     flex-wrap: wrap;
 }
 
+.team-item {
+    flex-basis: calc(100% / 4 - 30px);
+}
+
 .team-item:not(:last-child) {
     margin-right: var(--set-gap);
 }
@@ -208,9 +212,7 @@ body {
     border-radius: 0px 0px 4px 4px;
 }
 
-.team-item {
-    flex-basis: calc(100/4-30px);
-}
+
 
 .team-title {
     margin-top: 0;
@@ -281,7 +283,7 @@ body {
 .work-item {
     margin-top: var(--set-gap);
     margin-left: var(--set-gap);
-    flex-basis: calc(100/3-30px);
+    flex-basis: calc(100% / 3 - 30px);
 
 }
 
