@@ -1,5 +1,6 @@
 :root {
     --set-gap: 30px;
+    --set-item: 3;
     --main-text-color: #757575;
     --title-text-color: #212121;
     --secondary-text-color: #FFFFFF;
@@ -23,6 +24,21 @@ body {
     color: var(--main-text-color);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+}
+
 .container {
     width: 1200px;
     padding-left: 15px;
@@ -30,14 +46,7 @@ body {
     margin: 0 auto;
 }
 
-.header-box {
-    display: flex;
-    align-items: center;
-}
-
 .list {
-    padding: 0;
-    margin: 0;
     list-style: none;
 }
 
@@ -51,15 +60,17 @@ body {
     max-width: 100%;
 }
 
-.link:hover,
-.link:focus {
-    color: var(--accent-color);
+.header-box {
+    display: flex;
+    align-items: center;
 }
 
 .header {
+    padding-top: 24px;
+    padding-bottom: 24px;
     font-weight: 500;
     letter-spacing: 0.02em;
-    line-height: 1.17;
+    line-height: 1.14;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: var(--line-color);
@@ -70,7 +81,8 @@ body {
     font-family: var(--logo-font-family);
     font-weight: 700;
     font-size: 26px;
-    line-height: 1.17;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
     color: var(--accent-color);
 }
 
@@ -86,8 +98,13 @@ body {
     color: var(--secondary-text-color);
 }
 
-.site-nav {
+.site-nav-link {
     color: var(--title-text-color);
+}
+
+.link:hover,
+.link:focus {
+    color: var(--accent-color);
 }
 
 .site-nav .item:not(:last-child) {
@@ -96,7 +113,6 @@ body {
 
 .address-item:not(:last-child) {
     margin-right: 50px;
-
 }
 
 .address-list {
@@ -106,19 +122,17 @@ body {
 .site-nav-link,
 .address-link {
     display: block;
-    padding-top: 10px;
-    padding-bottom: 10px;
 }
 
 .hero {
+    padding-top: 200px;
+    padding-bottom: 200px;
     background-color: var(--accent-background-color);
     text-align: center;
-
 }
 
 .hero-title {
-    margin-top: 0;
-    margin-bottom: var(--set-gap);
+    margin-bottom: 30px;
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
@@ -128,7 +142,13 @@ body {
 }
 
 .main-btn {
-    min-width: 196px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 200px;
+    border: none;
     border-radius: 4px;
     padding: 10px 32px;
     font-family: var(--main-font-family);
@@ -141,38 +161,53 @@ body {
     cursor: pointer;
 }
 
-.features-list {
-    display: flex;
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
 }
 
-.features-item:not(:last-child) {
-    margin-right: var(--set-gap);
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
 }
 
-.features-title {
-    margin-top: 0;
+.feature-title {
     margin-bottom: 10px;
-    font-weight: 700;
     font-size: 14px;
-    line-height: 1.17;
+    font-weight: 700;
+    line-height: 1.14;
     text-transform: uppercase;
     color: var(--title-text-color);
 }
 
-.features-descr,
-.team-descr {
-    margin-top: 0;
-    margin-bottom: 0;
+.feature-list {
+    --set-item: 4;
 }
 
-.foto-works {
+.card-set {
     display: flex;
     flex-wrap: wrap;
+    margin-right: calc(-1 * var(--set-gap));
+    margin-bottom: calc(-1 * var(--set-gap));
 }
 
-.foto-work:not(:last-child) {
+.card-item {
     margin-right: var(--set-gap);
-    flex-basis: calc(100% / 3 - 30px);
+    margin-bottom: var(--set-gap);
+    flex-basis: calc(100% / var(--set-item) - var(--set-gap));
+
+}
+
+.work {
+    padding-top: 0;
 }
 
 .section-title {
@@ -185,22 +220,12 @@ body {
     color: var(--title-text-color);
 }
 
-.section {
-    padding-top: 94px;
-    padding-bottom: 94px;
+.team {
+    background-color: var(--secondary-background-color);
 }
 
 .team-list {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.team-item {
-    flex-basis: calc(100% / 4 - 30px);
-}
-
-.team-item:not(:last-child) {
-    margin-right: var(--set-gap);
+    --set-item: 4;
 }
 
 .team-content {
@@ -212,14 +237,11 @@ body {
     border-radius: 0px 0px 4px 4px;
 }
 
-
-
 .team-title {
     margin-top: 0;
     margin-bottom: 10px;
     font-weight: 500;
     color: var(--title-text-color);
-
 }
 
 .team-descr,
@@ -231,11 +253,8 @@ body {
 
 .filter-list {
     display: flex;
+    margin-bottom: 50px;
     justify-content: center;
-}
-
-.filters {
-    padding-top: 94px;
 }
 
 .filter-list .item:not(:last-child) {
@@ -250,52 +269,26 @@ body {
     font-size: 16px;
     line-height: 1.6;
     letter-spacing: 0.03em;
-    border-color: transparent;
+    border: none;
     background-color: var(--secondary-background-color);
     color: var(--title-text-color);
     cursor: pointer;
 }
 
-.filter-btn:hover {
-    border-color: var(--accent-color);
-    text-decoration: underline;
-}
-
+.filter-btn:hover,
 .filter-btn:focus {
     background-color: var(--accent-color);
     color: var(--secondary-text-color);
-    text-decoration: none;
 }
 
-.portfolio {
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.work-list {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: calc(-1* var(--set-gap));
-    margin-left: calc(-1* var(--set-gap));
-
-}
-
-.work-item {
-    margin-top: var(--set-gap);
-    margin-left: var(--set-gap);
-    flex-basis: calc(100% / 3 - 30px);
-
-}
-
-.work-content {
+.portfolio-content {
     padding: 20px 24px;
     border-left: 1px solid var(--border-portfolio-color);
     border-right: 1px solid var(--border-portfolio-color);
     border-bottom: 1px solid var(--border-portfolio-color);
 }
 
-.work-title {
-    margin-top: 0;
+.portfolio-title {
     margin-bottom: 4px;
     font-weight: 700;
     font-size: 18px;
@@ -304,15 +297,9 @@ body {
     color: var(--title-text-color);
 }
 
-.work-descr {
-    margin-top: 0;
-    margin-bottom: 0;
+.portfolio-descr {
     font-size: 16px;
     line-height: 1.8;
-}
-
-.team {
-    background-color: var(--secondary-background-color);
 }
 
 .address {
@@ -327,21 +314,22 @@ body {
 }
 
 .footer-link-main {
-    display: block;
-    margin-bottom: 9px;
     color: var(--secondary-text-color);
 }
 
-.post {
-    display: inline-block;
-    margin-bottom: 9px;
-}
-
-.current-link {
-    color: var(--accent-color);
+.footer-link {
+    color: var(--footer-address-color);
 }
 
 .logo-footer {
     display: block;
     margin-bottom: 20px;
+}
+
+.footer-item {
+    margin-bottom: 9px;
+}
+
+.current-link {
+    color: var(--accent-color);
 }
