@@ -102,11 +102,6 @@ ul {
     color: var(--title-text-color);
 }
 
-.link:hover,
-.link:focus {
-    color: var(--accent-color);
-}
-
 .site-nav .item:not(:last-child) {
     margin-right: 50px;
 }
@@ -195,13 +190,13 @@ ul {
 .card-set {
     display: flex;
     flex-wrap: wrap;
-    margin-right: calc(-1 * var(--set-gap));
-    margin-bottom: calc(-1 * var(--set-gap));
+    margin-left: calc(-1 * var(--set-gap));
+    margin-top: calc(-1 * var(--set-gap));
 }
 
 .card-item {
-    margin-right: var(--set-gap);
-    margin-bottom: var(--set-gap);
+    margin-left: var(--set-gap);
+    margin-top: var(--set-gap);
     flex-basis: calc(100% / var(--set-item) - var(--set-gap));
 
 }
@@ -330,6 +325,14 @@ ul {
     margin-bottom: 9px;
 }
 
+.site-nav-link:hover,
+.site-nav-link:focus,
+.address-link:hover,
+.address-link:focus,
+.footer-link:hover,
+.footer-link:focus,
+.footer-link-main:hover,
+.footer-link-main:focus,
 .current-link {
     color: var(--accent-color);
 }
